@@ -1,0 +1,67 @@
+#include "pch.h"
+#include "CorePch.h"
+#include <iostream>
+
+//window, linux 등의 os에서 공용으로 thread를 사용 할 수 있음
+#include <thread>
+
+//window, linux 등에서 All-of-noting사용 할 수 있음
+#include <atomic>
+//을 통해 fetch_add 사용 가능
+//fetch_add란 원자적으로 다른 쓰레드의 방해 없이 수행 할 수 있는것
+
+
+void HelloWorld() {
+    cout << "HelloThread" << endl;
+}
+
+void HelloThread_2(int32 a) {
+    cout << a << endl;
+}
+
+int main()
+{
+    //사실 엄청 무거운 작업
+    //연산 작업이 아닌 운영체제에게 사용자에게 화면에 결과를 보여주라는 의미이기 때문에
+    //cout << "helloworld" << endl;
+
+    //새로운 Thread가 만들어지면서 HelloWorld를 실행하고 종료됨
+    //기존 Main()에서 실행하게 되면 1개의 Thread에서 실행되는거지만 이건 별도의 Thread를 만들어서 실행시키는것
+    //std::thread t (HelloWorld);
+    //std::thread t2(HelloWorld_2);
+    //cout << "HelloMain" << endl;
+    //t가 끝날때까지 기달리겠다.
+
+    //vector<std::thread> v;
+
+    //for (int32 i = 0; i < 10; i++) {
+    //    v.push_back(std::thread(HelloThread_2, i));
+    //};
+
+    //for (int32 i = 0; i < 10; i++) {
+    //    if (v[i].joinable()) {
+    //        v[i].join();
+    //    };
+   // };
+
+
+    //CPU 코어 갯수는 몇개인지 추출하는 함수
+    //t.hardware_concurrency();
+
+    //쓰레드마다 부여되는 ID값 확인
+    //t.get_id();
+
+    //std:Thread 객체에서 실제 쓰레드를 분리(Demon Process) 이걸 사용후에는 쓰레드 정보를 가져올 수 없음 거의 사용 안함
+    //t.detach();
+
+    //쓰레드 id가 0인지 아닌지(쓰레드가 살아있는지 죽었는지)
+    //t.joinable();
+
+    //T 쓰레드가 끝날때까지 Main에서 기달려줌
+    //t.join();
+
+
+
+
+
+}
