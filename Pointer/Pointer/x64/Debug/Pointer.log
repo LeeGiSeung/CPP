@@ -1,0 +1,4 @@
+﻿  소스.cpp
+D:\c++\Pointer\Pointer\소스.cpp(47,16): error C2065: 'ptr': 선언되지 않은 식별자입니다.
+D:\c++\Pointer\Pointer\소스.cpp(48,3): error C2065: 'ptr': 선언되지 않은 식별자입니다.
+D:\c++\Pointer\Pointer\소스.cpp(67,3): error C2065: 'ptr2': 선언되지 않은 식별자입니다.
