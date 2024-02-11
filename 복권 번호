@@ -1,0 +1,74 @@
+#include <iostream>
+#include <deque>
+#include <string>
+#include <sstream>
+#include <vector>
+#include <string>
+#include <queue>
+
+using namespace std;
+
+void Swap(int &a, int &b) {
+	int temp = a;
+	a = b;
+	b = temp;
+}
+
+void Sort(int numbers[], int count) {
+	for (int i = 0; i < count; i++) {
+		int best = i;
+		for (int j = i + 1; j < count; j++) {
+			if (numbers[j] < numbers[best])
+				best = j;
+		}
+		if (i != best) {
+			Swap(numbers[i], numbers[best]);
+		}
+	}
+}
+
+void ChooseLotto(int numbers[]) {
+	srand((unsigned)time(0));
+	int count = 0;
+	while (count != 0) {
+		int randvalue = 1 + (rand() % 45);
+
+		bool found = false;
+
+		for (int i = 0; i < count; i++) {
+			if (numbers[i] == randvalue) {
+				found = true;
+				break;
+			}
+		}
+		if (found == false) {
+			numbers[count] = randvalue;
+			count++;
+		}
+	}
+	Sort(numbers, 6);
+
+}
+
+
+int main(void) {
+
+	int a = 1;
+	int b = 2;
+	
+	int* ap = &a;
+	int* bp = &b;
+
+	Swap(*ap, *bp);
+
+	int numbers[6] = { 1,42,3,15,5,6 };
+	Sort(numbers, size(numbers));
+
+	ChooseLotto(numbers);
+
+	for (int i = 0; i < size(numbers); i++) {
+		cout << numbers[i]<<" ";
+	}
+
+	return 0;
+}
