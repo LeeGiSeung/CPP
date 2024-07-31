@@ -1,0 +1,40 @@
+﻿  Source.cpp
+C:\Users\82103\Documents\Algorithm\이진트리\이진트리\Header.h(45,58): error C2078: too many initializers
+  (compiling source file 'Source.cpp')
+  C:\Users\82103\Documents\Algorithm\이진트리\이진트리\Header.h(45,58):
+  the template instantiation context (the oldest one first) is
+  	C:\Users\82103\Documents\Algorithm\이진트리\이진트리\Source.cpp(7,21):
+  	see reference to class template instantiation 'BST<int,float>' being compiled
+  	C:\Users\82103\Documents\Algorithm\이진트리\이진트리\Header.h(64,1):
+  	while compiling class template member function 'void BST<int,float>::insert(const Pair<T1,T2> &)'
+          with
+          [
+              T1=int,
+              T2=float
+          ]
+  		C:\Users\82103\Documents\Algorithm\이진트리\이진트리\Source.cpp(10,17):
+  		see the first reference to 'BST<int,float>::insert' in 'main'
+  	C:\Users\82103\Documents\Algorithm\이진트리\이진트리\Header.h(65,34):
+  	see reference to class template instantiation 'Node<T1,T2>' being compiled
+          with
+          [
+              T1=int,
+              T2=float
+          ]
+  	C:\Users\82103\Documents\Algorithm\이진트리\이진트리\Header.h(41,5):
+  	while compiling class template member function 'Node<T1,T2>::Node(const Pair<T1,T2> &,Node<T1,T2> *,Node<T1,T2> *,Node<T1,T2> *)'
+          with
+          [
+              T1=int,
+              T2=float
+          ]
+  		C:\Users\82103\Documents\Algorithm\이진트리\이진트리\Header.h(65,28):
+  		see the first reference to 'Node<T1,T2>::Node' in 'BST<int,float>::insert'
+          with
+          [
+              T1=int,
+              T2=float
+          ]
+  		C:\Users\82103\Documents\Algorithm\이진트리\이진트리\Source.cpp(10,17):
+  		see the first reference to 'BST<int,float>::insert' in 'main'
+  
